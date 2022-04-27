@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"twitter-lofi/usecase"
 )
 
@@ -15,13 +14,6 @@ func postLofi(countPost int) {
 	lofiPosted := lofiUsecase.Execute(search)
 
 	fmt.Println("O lofi postado foi o ", lofiPosted.Title)
-	fmt.Println("Irei postar mais um lofi em 10 minutos")
-
-	time.Sleep(TIME_BETWEEN_POSTS * time.Minute)
-
-	if countPost < 5 {
-		postLofi(countPost)
-	}
 }
 
 func main() {
